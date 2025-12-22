@@ -1,0 +1,29 @@
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+inventoryenv/
+
+# Environment variables
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Database
+*.sqlite3
+*.db
+
+# Frontend (future)
+node_modules/
