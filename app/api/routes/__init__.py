@@ -3,3 +3,4 @@ from . import aisles
 from . import products
 from . import inventory
 from . import cart
+from . import checkout

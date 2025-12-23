@@ -1,7 +1,19 @@
 from fastapi import FastAPI
 from app.api.routes import departments, aisles , products, inventory, cart
+from app.api.routes import checkout
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(title="Instacart Backend")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # React dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(
     departments.router,
     prefix="/departments",
@@ -18,3 +30,10 @@ app.include_router(cart.router, prefix="/cart", tags=["Cart"])
 @app.get("/")
 def health():
     return {"status": "backend running"}
+
+
+app.include_router(
+    checkout.router,
+    prefix="/checkout",
+    tags=["Checkout"]
+)
