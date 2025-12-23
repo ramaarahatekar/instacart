@@ -27,3 +27,4 @@ Thumbs.db
 
 # Frontend (future)
 node_modules/
+*.zip
